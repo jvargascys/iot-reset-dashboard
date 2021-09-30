@@ -1,0 +1,22 @@
+{
+  "name": "iot-reset-dashboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/jvargascys/iot-reset-dashboard.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jvargascys/iot-reset-dashboard/issues"
+  },
+  "homepage": "https://github.com/jvargascys/iot-reset-dashboard#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
