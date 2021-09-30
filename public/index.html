@@ -25,6 +25,8 @@
                     <div class="fw-bold">{{client.clientid}}</div>
                     {{client.ip_address}}
                 </div>
+                <button class="btn btn-primary" type="reset" value="Reset" v-on:click="postTurnLed(client.clientid,true)">Encender LED</button>
+                <button class="btn btn-primary" type="reset" value="Reset" v-on:click="postTurnLed(client.clientid,false)">Apagar LED</button>
                 <button class="btn btn-primary" type="reset" value="Reset" v-on:click="postResetDevice(client.clientid)">Reiniciar</button>
             </li>
         </ol>
@@ -41,6 +43,12 @@
             methods: {
                 isSelected: function(i) {
                     return i === this.selected
+                },
+                postTurnLed(deviceId, status) {
+                    axios.post("/api/turn-led-device/" + deviceId + "/" + status).then(data => {
+                            console.log(data.data);
+                        })
+                        .catch(console.log);
                 },
                 postResetDevice(deviceId) {
                     axios.post("/api/reset-device/" + deviceId).then(data => {
